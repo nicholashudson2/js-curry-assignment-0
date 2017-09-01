@@ -22,21 +22,22 @@ const customers = [
     'carlo rozzi': 6
   }),
   customer('david', {
-    detergent: 1,
-    hennessey: 1,
-    coffee: 1
+    'detergent': 1,
+    'hennessey': 1,
+    'coffee': 1
   }),
   customer('michael', {
-    coffee: 3,
-    hennessey: 3
+    'coffee': 3,
+    'hennessey': 3
   }),
   customer('dillon', {
-    cookies: 3,
+    'cookies': 3,
     'mountain dew': 3
   })
 ]
 
 const carts = constructCarts(listings)
 
-carts(customers)
-  .forEach(cart => console.log(`${cart.customer}, your cart contains ${util.inspect(cart.items)}`))
+carts(customers).forEach(cart => console.log(`${cart.customer}, your cart contains ${util.inspect(cart.items)}`))
+
+// console.log(itemRepeater('coffee')(6))
