@@ -30,10 +30,10 @@ const itemRepeater =
   itemName =>
     count => {
       let array = []
-      for (let i = 1; i <= count; i++)
+      for (let i = 1; i <= count; i++) 
         array.push(itemName)
       return array
-    }
+}
 
 /**
  * should return an array of carts with each given customer's shopping list
@@ -42,11 +42,13 @@ const itemRepeater =
 const constructCarts =
   listings =>
     customers =>
-      customers.reduce((prev, curr) =>
+      customers.reduce((prev, curr) => 
         prev.concat(
           {
-            'customer': curr.name,
-            'items': Object.keys(curr.shoppingList).reduce((prevKey, curKey) => prevKey.concat(itemRepeater(curKey)(curr.shoppingList[curKey])), [])
+            // Assigns name to cart object being appended to resulting object array.
+            'customer': curr.name, 
+            // Adds array of items to cart object.
+            'items': Object.keys(curr.shoppingList).reduce((prevKey, curKey) => prevKey.concat(itemRepeater(curKey)(curr.shoppingList[curKey])), []) // Adds array of items to cart object.
           }
         )
       , [])
